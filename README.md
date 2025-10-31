@@ -10,8 +10,10 @@
 ## Core Classes
 | Class | Role |
 |-------|------|
-| `Main` | `setup()`, `draw()` |
-| `...` | ... |
+| Grid | Shows the grid of the game |
+| Cell | Represents each individual cell |
+| UI | Represents the UI of the program, OOP so it is very reusable |
+|-------|------|
 
 ## Group
 - Seapickle755
