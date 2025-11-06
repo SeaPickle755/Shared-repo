@@ -4,7 +4,7 @@
 
 **Pitch:** A highly performant rendition of the classic Conway's game of life with many novel features.
 
-![Class Diagram](https://github.com/SeaPickle755/Shared-repo/blob/990482dd30684becdd2bcd33dce7b74b29ea529a/images/Untitled%20Diagram.jpg)
+![Class Diagram](https://github.com/SeaPickle755/Shared-repo/blob/2ca04bba13896fb1e78b9e3c57404c65cf8f64da/images/UnfinishedDiagram.jpg)
 ![UI Mockup](https://github.com/SeaPickle755/Shared-repo/blob/34c036c277287f7f334e06e2c07911c3fe97fd4d/images/2nd%20Drawing.jpg)
 
 ## Core Classes
