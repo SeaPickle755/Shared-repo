@@ -1,3 +1,4 @@
+// (c) Andrew Yenchek 2025
 class Cell{
 Boolean isOccupied;
 // position in pixels not cells
