@@ -1,7 +1,5 @@
 //Conway's Game of Life UI || Andrew Rogan || 11/11/25
 boolean mk;
-int x, y, x2, y2;
-String dVal,dVal2;
 void setup() {
   mk = true;
   textMode(CENTER);
