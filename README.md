@@ -16,7 +16,7 @@
 |-------|------|
 
 ## Group
-- Seapickle755
-- batnj
-- RogDog1
-- ibitefingersyum
+- Seapickle7550-Yencheck
+- batnj-Reedy
+- RogDog1-Rogan
+- ibitefingersyum-Alex
