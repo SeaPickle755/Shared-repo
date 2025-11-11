@@ -1,13 +1,13 @@
-//Grid Class | Alex Zheng
+//Grid Class | Alex Zheng | WORK IN PROGRESS
 
 class Grid {
-  int siZe = 10;
+  int cellSize = 10;
 
   Grid() {
-    // for loop u wanted mr yencheck if i spelt that right
-    for (int x = 0; x < width; x += siZe) {
-      for (int y = 0; y < height; y += siZe) {
-        new Cell(x, y, siZe);
+    // for loop that d
+    for (int x = 0; x < width; x += cellSize) {
+      for (int y = 0; y < height; y += cellSize) {
+        new Cell(x, y, cellSize);
       }
     }
   }
