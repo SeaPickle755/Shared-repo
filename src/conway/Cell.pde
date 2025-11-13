@@ -9,6 +9,7 @@ class Cell {
     isOccupied = doesStartOccupied;
   }
   void draw() {
+    strokeWeight(0);
     if (isOccupied)
       fill(255, 0, 0);
     else
