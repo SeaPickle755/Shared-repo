@@ -6,7 +6,7 @@ class Grid {
     // for loop that d
     for (int x = 0; x < width; x += CELLSIZE) {
       for (int y = 0; y < height; y += CELLSIZE) {
-        new Cell((float)x, (float)y, false); // every cell starts as false
+        new Cell(x, y, CELLSIZE);
       }
     }
   }
