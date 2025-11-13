@@ -13,7 +13,13 @@ class Grid {
 
       // for loop vertical
       for (int y = 0; y < height; y += CELLSIZE) {
-        Cell c = new Cell(x, y, false);
+        Boolean cellStart = true;
+        if((int)random(0, 10)%2 == 0)
+          ;
+        else{
+           cellStart = false;
+        };
+        Cell c = new Cell(x, y, cellStart);
         col.add(c);
       }
 
@@ -21,4 +27,12 @@ class Grid {
       cells.add(col);
     }
   }
-}
+  void display(){
+    for(int x = 0; x < cells.size(); x++){
+       ArrayList<Cell> yList = cells.get(x);
+       for(int y = 0; y < yList.size(); y++){
+         yList.get(y).draw();
+       }
+    }
+  }
+};
