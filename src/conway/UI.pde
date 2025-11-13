@@ -1,6 +1,6 @@
 //Conway's Game of Life UI || Andrew Rogan || 11/11/25
 boolean mk;
-void setup() {
+void setupUI() {
   mk = true;
   textMode(CENTER);
   size(1000,800);
@@ -8,8 +8,9 @@ void setup() {
   textSize(100);
 }
 
-void draw() {
+void drawUI() {
   fill(255);
+  strokeWeight(4);
   rect(1,1,998,798);
   if (mk == true) {
     fill(20);
