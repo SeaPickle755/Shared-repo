@@ -1,13 +1,24 @@
-//Grid Class | Alex Zheng | WORK IN PROGRESS
-// use CELLSIZE constant from conway.pde!
+// Grid Class | Alex Zheng
+// Uses CELLSIZE from conway.pde
+
 class Grid {
+  ArrayList<ArrayList<Cell>> cells;
 
   Grid() {
-    // for loop that d
+    cells = new ArrayList<ArrayList<Cell>>();
+
+    // for loop horizontal
     for (int x = 0; x < width; x += CELLSIZE) {
+      ArrayList<Cell> col = new ArrayList<Cell>(); // each column
+
+      // for loop vertical
       for (int y = 0; y < height; y += CELLSIZE) {
-        new Cell(x, y, false);
+        Cell c = new Cell(x, y, false);
+        col.add(c);
       }
+
+      // add column to grid
+      cells.add(col);
     }
   }
 }
