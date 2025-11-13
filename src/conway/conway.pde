@@ -5,7 +5,7 @@ Cell cellTest;
 Grid mainGrid;
 void setup(){
   textMode(CENTER);
-  size(1000,800);
+  size(1600, 800);
   strokeWeight(4);
   textSize(100);
   setupUI();
