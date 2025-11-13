@@ -9,14 +9,14 @@ void setup() {
 }
 
 void draw() {
-  dVal = "SIMULATION";
-  dVal2 = "DISPLAY";
   fill(255);
   rect(1,1,998,798);
   if (mk == true) {
     fill(20);
     text("SIMULATION",257,400);
     text("DISPLAY",325,500);
+    line(50,125,50,675);
+    line(125,750,875,750);
   }
   if (mk == false) {
     fill(20);
@@ -27,7 +27,15 @@ void draw() {
     fill(0);
     textSize(10);
     text("Conway's Game of Life", 800,775);
-    textSize(100);  }
+    textSize(100);  
+    fill(250);
+    rect(750,50,25,25);
+    rect(750,100,25,25);
+    rect(750,150,25,25);
+    line(50,125,50,675);
+    line(125,750,575,750);
+    
+  }
 }
 
 void mousePressed() {
