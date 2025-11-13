@@ -14,7 +14,7 @@ void draw(){
     fill(255, 0, 0);
   else
     fill(0, 0, 0);
-  rect(x, y, 16.f, 16.f);
+  rect(x, y, CELLSIZE, CELLSIZE);
 }
 void update(){
 
