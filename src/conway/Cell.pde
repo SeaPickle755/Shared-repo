@@ -40,4 +40,7 @@ class Cell {
     }
     
   }
+  boolean getOccupied(){
+    return isOccupied;
+  }
 };

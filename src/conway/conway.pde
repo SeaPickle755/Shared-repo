@@ -1,3 +1,4 @@
+
 // Whole group credits
 static float CELLSIZE = 16.f; // make the cell size be 16
 
@@ -5,6 +6,7 @@ Cell cellTest;
 Grid mainGrid;
 void setup(){
   textMode(CENTER);
+  // WARNING: Both sides need to be divisible by 16 to avoid cutting off cells
   size(1600, 800);
   strokeWeight(4);
   textSize(100);
@@ -14,7 +16,9 @@ void setup(){
 }
 void draw(){
   background(128);
-  drawUI();
   mainGrid.display();
+  
+  drawUI();
+  mainGrid.update();
   //cellTest.draw();
 }
