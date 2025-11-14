@@ -3,7 +3,7 @@ boolean mk;
 void setupUI() {
   mk = true;
   textMode(CENTER);
-  size(1000,800);
+  //size(1000,800);
   strokeWeight(4);
   textSize(100);
 }
