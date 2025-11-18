@@ -15,7 +15,6 @@ void setup(){
   strokeWeight(4);
   textSize(100);
   setupUI();
-  cellTest = new Cell(0.f, 0.f, true);
   mainGrid = new Grid();
 }
 
@@ -29,13 +28,9 @@ void keyPressed()
     shouldUIbeVisible = true;
   }
 }
-/*
-void keyReleased()
-{
-  if(keyCode == 32 && shouldUIbeVisible){
-    shouldUIbeVisible = false;
-  }]
-}*/
+void mousePressed(){
+  mainGrid.mousePress();
+}
 void draw(){
   background(128);
   mainGrid.display();

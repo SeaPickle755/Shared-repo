@@ -38,11 +38,3 @@ void drawUI() {
     
   }
 }
-
-void mousePressed() {
-  if(mk) {
-    mk=false;
-  }else if (mk==false) {
-    mk=true;
-  }
-}
