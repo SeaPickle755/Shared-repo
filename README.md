@@ -1,4 +1,5 @@
 # Conway's Game of Life 
+![Logo](https://github.com/SeaPickle755/Shared-repo/blob/0e1add083b711e8feda580a9e2166c09f3542eac/images/Logo.png)
 
 **Classification:** Simulation
 
