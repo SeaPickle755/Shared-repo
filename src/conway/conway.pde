@@ -4,6 +4,9 @@ static float CELLSIZE = 16.f; // make the cell size be 16
 
 Cell cellTest;
 Grid mainGrid;
+int cellCounter = 0;
+// this is temporary
+int speed = 5;
 void setup(){
   textMode(CENTER);
   // WARNING: Both sides need to be divisible by 16 to avoid cutting off cells
@@ -17,8 +20,12 @@ void setup(){
 void draw(){
   background(128);
   mainGrid.display();
-  
-  drawUI();
-  mainGrid.update();
+  // remove UI for now
+  //drawUI();
+  cellCounter ++;
+  if(cellCounter >= speed){
+    mainGrid.update();
+    cellCounter = 0;  
+  }
   //cellTest.draw();
 }

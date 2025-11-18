@@ -1,12 +1,14 @@
 // (c) Andrew Yenchek 2025
 class Cell {
   Boolean isOccupied;
+  Boolean lastOccupied; 
   // position in pixels not cells
   float x, y;
   Cell(float x, float y, Boolean doesStartOccupied) {
     this.x = x;
     this.y= y;
     isOccupied = doesStartOccupied;
+    lastOccupied = isOccupied;
   }
   void draw() {
     strokeWeight(0);
@@ -19,6 +21,7 @@ class Cell {
   // arguments:
   // neighbors is a 8 list of the neighbors surrounding it
   void update(Boolean[] neighbors) {
+    lastOccupied = isOccupied;
     int listLength = neighbors.length;
     int numOccupied = 0;
     for(int i = 0; i < listLength; i++){
@@ -41,6 +44,6 @@ class Cell {
     
   }
   boolean getOccupied(){
-    return isOccupied;
+    return lastOccupied;
   }
 };
