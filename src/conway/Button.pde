@@ -16,8 +16,9 @@ class Button {
     fill(isHovering() ? lerpColor(fillColor, color(255), 0.2) : fillColor);
     noStroke();
     rect(x, y, w, h, 10);
-// fixed by andrew
-    fill(fillColor);
+
+    fill(textColor); //BRAXTEN OR WHATEVER HOWEVER YOU SPELL YOUR NAME FIX YOUR CODE
+    textFont(buttonFont); //BRAXTEN OR WHATEVER HOW YOU SPELL YOUR NAME FIX YOUR CODE
     textAlign(CENTER, CENTER);
     text(label, x + w / 2, y + h / 2);
   }
