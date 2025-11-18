@@ -35,4 +35,41 @@ class Grid {
        }
     }
   }
-};
+void update() {
+    // get size of array
+    int R = cells.size();
+    int C = cells.get(0).size();
+    
+    
+    int[] offsetR = { -1, -1, -1, 0, 0, 1, 1, 1 }; // Row offsets
+    int[] offsetC = { -1, 0, 1, -1, 1, -1, 0, 1 }; // Column offsets
+    
+    for (int r = 0; r < R; r++) {
+        ArrayList<Cell> rowList = cells.get(r);
+        for (int c = 0; c < C; c++) {
+            Cell current = rowList.get(c);
+            Boolean[] neighbors = new Boolean[8];
+            
+            for (int i = 0; i < 8; i++) {
+                int neighbor_r = r + offsetR[i];
+                int neighbor_c = c + offsetC[i];
+
+                // make sure you get a index actually in the array
+                boolean is_valid = 
+                    (neighbor_r >= 0 && neighbor_r < R) &&
+                    (neighbor_c >= 0 && neighbor_c < C);
+
+                if (is_valid) {
+                    Cell neighborCell = cells.get(neighbor_r).get(neighbor_c);
+                    neighbors[i] = neighborCell.getOccupied(); 
+                } else {
+                    // 4. If outside the grid (invalid), set the state to false
+                    neighbors[i] = false;
+                }
+               
+            }
+         current.update(neighbors);
+        }
+    }
+}
+}
