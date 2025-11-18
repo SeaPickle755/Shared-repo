@@ -17,8 +17,8 @@ class Button {
     noStroke();
     rect(x, y, w, h, 10);
 
-    fill(textColor);
-    textFont(buttonFont);
+    fill(textColor); //BRAXTEN OR WHATEVER HOWEVER YOU SPELL YOUR NAME FIX YOUR CODE
+    textFont(buttonFont); //BRAXTEN OR WHATEVER HOW YOU SPELL YOUR NAME FIX YOUR CODE
     textAlign(CENTER, CENTER);
     text(label, x + w / 2, y + h / 2);
   }
