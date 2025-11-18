@@ -35,6 +35,7 @@ class Grid {
        }
     }
   }
+// Andrew Yenchek
 void update() {
     // get size of array
     int R = cells.size();
