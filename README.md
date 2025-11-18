@@ -22,8 +22,9 @@
 3. Images
 4. Infinite scrollable canvas
 
+
 ## Group
-- Seapickle7550-Yencheck
-- batnj-Reedy
-- RogDog1-Rogan
-- ibitefingersyum-Alex
+- Seapickle7550-Yenchek. Responisibilites are fixing code, Cell class. 
+- batnj-Reedy. Responsibilities are helping with UI code 
+- RogDog1-Rogan. Responsibilities are UI class + Fixing code
+- ibitefingersyum-Alex. Grid class, artwork. Managing README as well
