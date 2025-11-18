@@ -14,7 +14,13 @@
 | Grid | Shows the grid of the game |
 | Cell | Represents each individual cell |
 | UI | Represents the UI of the program, OOP so it is very reusable |
-|-------|------|
+
+
+## TO DO list
+1. Make UI comprehensible (More settings, running goal, low priority)
+2. Add clicks to change states of cells
+3. Images
+4. Infinite scrollable canvas
 
 ## Group
 - Seapickle7550-Yencheck
