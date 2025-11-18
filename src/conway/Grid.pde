@@ -74,6 +74,9 @@ void update() {
     }
 }
 void mousePress(){
-   
+   int cellX = (int)(mouseX/CELLSIZE);
+   int cellY = (int)(mouseY/CELLSIZE);
+   Cell cellInQuestion = cells.get(cellX).get(cellY);
+   cellInQuestion.switchStates();
 }
 }
