@@ -20,12 +20,12 @@ class UI {
       sliderX.display();
       sliderY.update();
       sliderY.display();
+      sliderX.hover();
+      sliderY.hover();
 
       if (mk == true) {
         stroke(0);
         fill(220);
-        text("SIMULATION", 257, 400);
-        text("DISPLAY", 325, 500);
         line(50, 125, 50, 675);
         rect(1200, 0, 400, 800);
         fill(220);
