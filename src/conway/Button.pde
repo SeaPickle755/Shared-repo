@@ -16,9 +16,8 @@ class Button {
     fill(isHovering() ? lerpColor(fillColor, color(255), 0.2) : fillColor);
     noStroke();
     rect(x, y, w, h, 10);
-//--; // BRAXTON FIX THIS BRUH 
-//    fill(textColor);
-//    textFont(buttonFont);
+   fill(textColor);
+   textFont(buttonFont);
     textAlign(CENTER, CENTER);
     text(label, x + w / 2, y + h / 2);
   }
