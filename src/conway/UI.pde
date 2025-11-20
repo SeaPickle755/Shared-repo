@@ -32,3 +32,7 @@ void drawUI() {
     
   }
 }
+
+void UIonMouseClick(){
+  print("Clicked on UI!");
+}

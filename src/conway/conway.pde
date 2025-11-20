@@ -1,6 +1,10 @@
 
 // Whole group credits
+
+// trying to change these will throw an error!
 static float CELLSIZE = 16.f; // make the cell size be 16
+static float UISTARTX = 1250; // the 
+
 
 Cell cellTest;
 Grid mainGrid;
@@ -29,7 +33,12 @@ void keyPressed()
   }
 }
 void mousePressed(){
-  mainGrid.mousePress();
+  if(shouldUIbeVisible){
+    if(mouseX > UISTARTX){
+      UIonMouseClick();
+    }
+  } 
+   mainGrid.mousePress();
 }
 void draw(){
   background(128);
