@@ -46,4 +46,8 @@ class Cell {
   boolean getOccupied(){
     return lastOccupied;
   }
+  void switchStates(){
+    isOccupied = !isOccupied;
+    lastOccupied = isOccupied;
+  }
 };
