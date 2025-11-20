@@ -20,11 +20,9 @@ class Slider {
       println("Clicked");
     } else if (v==false) {
       line(x, y, x+l, y);
-      line(tPos, y-tSize/2, tPos, y+tSize/2);
     }
   }
   void update() {
-    background(220);
     if (over) {
       if (v) {
         tPos=mouseY;
