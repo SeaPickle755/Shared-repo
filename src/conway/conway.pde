@@ -1,6 +1,5 @@
-
 // Whole group credits
-
+UI ui = new UI();
 // trying to change these will throw an error!
 static float CELLSIZE = 16.f; // make the cell size be 16
 static float UISTARTX = 1250; // the 
@@ -18,7 +17,7 @@ void setup(){
   size(1600, 800);
   strokeWeight(4);
   textSize(100);
-  setupUI();
+  ui.setupUI();
   mainGrid = new Grid();
 }
 
@@ -35,7 +34,6 @@ void keyPressed()
 void mousePressed(){
   if(shouldUIbeVisible){
     if(mouseX > UISTARTX){
-      UIonMouseClick();
     }
   } 
    mainGrid.mousePress();
@@ -44,7 +42,7 @@ void draw(){
   background(128);
   mainGrid.display();
   if(shouldUIbeVisible)
-    drawUI();
+    ui.drawUI();
   cellCounter ++;
   if(cellCounter >= speed){
     mainGrid.update();
