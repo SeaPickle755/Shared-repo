@@ -55,6 +55,7 @@ void keyPressed()
 void mousePressed(){
   if(shouldUIbeVisible){
     if(mouseX > UISTARTX){
+      ui.UIonMouseClick();
     }
   } 
    mainGrid.mousePress();
