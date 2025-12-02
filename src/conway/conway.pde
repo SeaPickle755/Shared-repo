@@ -23,6 +23,7 @@ void setup(){
 
 void keyPressed()
 {
+  // 32 is space
   if(keyCode == 32 && shouldUIbeVisible){
     shouldUIbeVisible = false;
     return;
@@ -30,7 +31,18 @@ void keyPressed()
   if(keyCode == 32 ){
     shouldUIbeVisible = true;
   }
+  // ALL THIS CODE IS TEMPORARY
+  // 80 is p
+  if(keyCode == 80 && speed != 0){
+    speed = 0;
+    return;
+  }
+  if(keyCode == 80 ){
+    speed = 5;
+  }
+  // DELETE
 }
+
 void mousePressed(){
   if(shouldUIbeVisible){
     if(mouseX > UISTARTX){
@@ -44,7 +56,7 @@ void draw(){
   if(shouldUIbeVisible)
     ui.drawUI();
   cellCounter ++;
-  if(cellCounter >= speed){
+  if(cellCounter >= speed && speed != 0){
     mainGrid.update();
     cellCounter = 0;  
   }

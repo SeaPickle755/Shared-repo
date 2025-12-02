@@ -14,11 +14,11 @@ class Grid {
       // for loop vertical
       for (int y = 0; y < height; y += CELLSIZE) {
         Boolean cellStart = true;
-        if((int)random(0, 10)%2 == 0)
+        //if((int)random(0, 10)%2 == 0)
           ;
-        else{
+        //else{
            cellStart = false;
-        };
+        //};
         Cell c = new Cell(x, y, cellStart);
         col.add(c);
       }

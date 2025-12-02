@@ -17,6 +17,7 @@ class Cell {
     else
       fill(0, 0, 0);
     rect(x, y, CELLSIZE, CELLSIZE);
+    lastOccupied = isOccupied;
   }
   // arguments:
   // neighbors is a 8 list of the neighbors surrounding it
