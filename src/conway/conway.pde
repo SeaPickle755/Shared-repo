@@ -12,6 +12,7 @@ int cellCounter = 0;
 // this is temporary
 int speed = 5;
 Boolean shouldUIbeVisible = false;
+int prevMouseX, prevMouseY;
 void setup(){
   textMode(CENTER);
   // WARNING: Both sides need to be divisible by 16 to avoid cutting off cells
@@ -59,8 +60,15 @@ void mousePressed(){
       ui.UIonMouseClick();
     }
   } 
-   mainGrid.mousePress();
+  
+     mainGrid.mousePress();
 }
+void mouseDragged() 
+{
+  if(mouseButton == LEFT)
+    mainGrid.mousePress();
+}
+
 void draw(){
   background(128);
   mainGrid.display();
@@ -70,8 +78,10 @@ void draw(){
   if(cellCounter >= speed && speed != 0){
     mainGrid.update();
     cellCounter = 0;  
+    
   }
   //mainGrid.sizeChanged(width, height);
   //cellTest.draw();
+  
   
 }
