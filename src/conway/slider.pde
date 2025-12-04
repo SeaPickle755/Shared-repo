@@ -1,19 +1,24 @@
 class Slider {
   float x, y, l, tPos, tSize;
-  boolean v, over;
-  Slider(float x, float y, float l, float tSize, boolean v) {
+  boolean v, over, c;
+  Slider(float x, float y, float l, float tSize, boolean v, boolean c) {
     this.x=x;
     this.y=y;
     this.l=l;
     this.tSize=tSize;
     this.v=v;
+    this.c=c;
     if (v) {
       tPos=y+l;
     } else if (v==false) {
       tPos=x+l;
     }
   }
+
   void display() {
+    if (c) {
+    stroke(0);
+    }
     if (v) {
       line(x, y, x, y+l);
       line(x-tSize/2, y+l, x+tSize/2, y+l);
@@ -21,8 +26,12 @@ class Slider {
     } else if (v==false) {
       line(x, y, x+l, y);
     }
+    stroke(255);
   }
   void update() {
+        if (c) {
+    stroke(0);
+    }
     if (over) {
       if (v) {
         tPos=mouseY;
@@ -37,6 +46,9 @@ class Slider {
     } else if (v==false) {
       line(x, y, x+l, y);
       line(tPos, y-tSize/2, tPos, y+tSize/2);
+    }
+        if (c) {
+    stroke(255);
     }
   }
   void hover() {
@@ -56,4 +68,4 @@ class Slider {
       }
     }
   }
-}
+};
