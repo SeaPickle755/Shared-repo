@@ -60,15 +60,19 @@ void mousePressed(){
       ui.UIonMouseClick();
     }
   } 
-  
+  if(mouseButton != RIGHT)
      mainGrid.mousePress();
 }
 void mouseDragged() 
 {
   if(mouseButton == LEFT)
     mainGrid.mousePress();
+  if(mouseButton == RIGHT)
+    mainGrid.moveCamera((int)(mouseX-pmouseX)/2, (int)(mouseY-pmouseY)/2);
 }
-
+void mouseWheel(MouseEvent event){
+  mainGrid.scrolled(event.getCount());
+}
 void draw(){
   background(128);
   mainGrid.display();

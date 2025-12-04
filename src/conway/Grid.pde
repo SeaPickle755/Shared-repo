@@ -9,12 +9,15 @@ class Grid {
   // create list of alive cells only
   HashMap<PVector, Boolean> aliveCells;
   int offsetX, offsetY;
+  int scrollX, scrollY;
   Grid() {
     aliveCells = new HashMap<PVector, Boolean>();
+    scrollX = 1;
+    scrollY = 1;
   }
   void display() {
-    int cols = width / (int)CELLSIZE;
-    int rows = height / (int)CELLSIZE;
+    int cols = width / (int)CELLSIZE*scrollX;
+    int rows = height / (int)CELLSIZE*scrollY;
     strokeWeight(0);
     for (int x = 0; x < cols; x++) {
       for (int y = 0; y < rows; y++) {
@@ -26,11 +29,17 @@ class Grid {
         } else {
           fill(0);           // BLACK – dead
         }
-
-        rect(x*CELLSIZE, y*CELLSIZE, CELLSIZE, CELLSIZE);
+            float cellW = CELLSIZE / scrollX;
+    float cellH = CELLSIZE / scrollY;
+    
+    rect(x * cellW, y * cellH, cellW, cellH);
       }
     }
   }
+  void scrolled(int scroll) {
+  scrollX = max(1, scrollX + scroll);
+  scrollY = max(1, scrollY + scroll);
+}
   // Andrew Yenchek
   void update() {
 
@@ -108,8 +117,9 @@ class Grid {
     return isOccupied;
   }
   void mousePress() {
-    int cellX = mouseX / (int)CELLSIZE;
-    int cellY = mouseY / (int)CELLSIZE;
+int cellX = (int)(mouseX / (CELLSIZE * scrollX)) + offsetX;
+int cellY = (int)(mouseY / (CELLSIZE * scrollY)) + offsetY;
+
     cellX += offsetX;
     cellY += offsetY;
     if (aliveCells.containsKey(new PVector(cellX, cellY))) {
