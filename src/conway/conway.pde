@@ -12,6 +12,7 @@ int cellCounter = 0;
 // this is temporary
 int speed = 5;
 Boolean shouldUIbeVisible = false;
+int penSize = 1;
 int prevMouseX, prevMouseY;
 void setup(){
   textMode(CENTER);
@@ -51,6 +52,10 @@ void keyPressed()
     mainGrid.moveCamera(-1, 0);
   else if(key == 'd')
     mainGrid.moveCamera(1, 0);
+  else if(key == '=')
+    penSize++;
+  else if(key == '-')
+    penSize--;
   // DELETE
 }
 
@@ -61,12 +66,12 @@ void mousePressed(){
     }
   } 
   if(mouseButton != RIGHT)
-     mainGrid.mousePress();
+     mainGrid.mousePress(penSize);
 }
 void mouseDragged() 
 {
   if(mouseButton == LEFT)
-    mainGrid.mousePress();
+    mainGrid.mousePress(penSize);
   if(mouseButton == RIGHT)
     mainGrid.moveCamera((int)(mouseX-pmouseX)/2, (int)(mouseY-pmouseY)/2);
 }

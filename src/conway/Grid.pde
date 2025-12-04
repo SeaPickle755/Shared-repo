@@ -116,16 +116,25 @@ class Grid {
     }
     return isOccupied;
   }
-  void mousePress() {
-int cellX = (int)(mouseX / (CELLSIZE * scrollX)) + offsetX;
-int cellY = (int)(mouseY / (CELLSIZE * scrollY)) + offsetY;
+void mousePress(int size) {
+  int centerX = (int)(mouseX / (CELLSIZE * scrollX)) + offsetX;
+  int centerY = (int)(mouseY / (CELLSIZE * scrollY)) + offsetY;
 
-    cellX += offsetX;
-    cellY += offsetY;
-    if (aliveCells.containsKey(new PVector(cellX, cellY))) {
-      aliveCells.remove(new PVector(cellX, cellY));
-    } else {
-      aliveCells.put(new PVector(cellX, cellY), true);
+  // Loop through cells within the brush size
+  for (int dx = -size; dx <= size; dx++) {
+    for (int dy = -size; dy <= size; dy++) {
+
+      int cellX = centerX + dx;
+      int cellY = centerY + dy;
+
+      PVector cell = new PVector(cellX, cellY);
+
+      if (aliveCells.containsKey(cell)) {
+        aliveCells.remove(cell);
+      } else {
+        aliveCells.put(cell, true);
+      }
     }
   }
+}
 };
