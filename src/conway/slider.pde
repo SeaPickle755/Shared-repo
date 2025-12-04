@@ -1,5 +1,5 @@
 class Slider {
-  float x, y, l, tPos, tSize;
+  float x, y, l, tPos, tSize, map;
   boolean v, over, c;
   Slider(float x, float y, float l, float tSize, boolean v, boolean c) {
     this.x=x;
@@ -67,5 +67,8 @@ class Slider {
         println(str(over));
       }
     }
+  }
+  float getValue(int rangeStart, int rangeEnd) {
+    return map(tPos,0,300,rangeStart,rangeEnd);
   }
 }
