@@ -32,6 +32,7 @@ class UI {
       rect(1250, 150, 25, 25);
       line(50, 125, 50, 675);
       line(125, 750, 575, 750);
+
       strokeWeight(4);
       sliderX.update();
       sliderY.update();
@@ -42,6 +43,10 @@ class UI {
       sliderX.hover();
       sliderY.hover();
       sliderSpeed.hover();
+      sliderSpeed.getValue(0, 10);
+      fill(0);
+      text(str(sliderSpeed.getValue(0, 10)), 1250, 50);
+      fill(255);
     }
   }
 
