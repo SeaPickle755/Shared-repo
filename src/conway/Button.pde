@@ -35,11 +35,11 @@ class Button {
     rect(x, y, w, h, 10);
    fill(fillColor);
 
-<<<<<<< Updated upstream
+
     fill(fillColor); //BRAXTEN OR WHATEVER HOWEVER YOU SPELL YOUR NAME FIX YOUR CODE
-=======
+
     fill(textColor);
->>>>>>> Stashed changes
+
     textAlign(CENTER, CENTER);
     textFont(font);
     text(label, x + w/2, y + h/2);
