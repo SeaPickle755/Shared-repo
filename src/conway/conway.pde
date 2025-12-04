@@ -7,6 +7,7 @@ static float UISTARTX = 1250; // the
 
 Cell cellTest;
 Grid mainGrid;
+Boolean leftClickDrag = false;
 int cellCounter = 0;
 // this is temporary
 int speed = 5;
