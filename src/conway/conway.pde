@@ -1,4 +1,4 @@
-// Whole group credits
+ // Whole group credits
 UI ui = new UI();
 // trying to change these will throw an error!
 static float CELLSIZE = 16.f; // make the cell size be 16
