@@ -23,6 +23,7 @@ void setup(){
   textSize(100);
   ui.setupUI();
   mainGrid = new Grid();
+  mainGrid.getPopulation();
 }
 
 void keyPressed()
@@ -69,6 +70,9 @@ void mousePressed(){
   if(mouseButton != RIGHT)
      mainGrid.mousePress(penSize);
 }
+void mouseReleased() {
+  ui.UIonMouseRelease();
+}
 void mouseDragged() 
 {
   if(mouseButton == LEFT)
@@ -79,9 +83,6 @@ void mouseDragged()
 void mouseWheel(MouseEvent event){
   mainGrid.scrolled(event.getCount());
 }
-void updateGrid(){
-  mainGrid.update();
-}
 void draw(){
   background(128);
   mainGrid.display();
@@ -89,7 +90,7 @@ void draw(){
     ui.drawUI();
   cellCounter --;
   if(cellCounter <= speed && speed != 0){
-    thread("updateGrid");
+    mainGrid.update();
     cellCounter = 11;  
     
   }

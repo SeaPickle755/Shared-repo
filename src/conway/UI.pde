@@ -48,6 +48,7 @@ class UI {
       fill(0);
       textSize(20);
       text(str(sliderSpeed.getValue(0, 10)), 1250, 150);
+      text("Population: " + str(mainGrid.getPopulation()),1300,725);
       fill(255);
     }
   } 
