@@ -17,7 +17,7 @@ class Slider {
 
   void display() {
     if (c) {
-    stroke(0);
+      stroke(0);
     }
     if (v) {
       line(x, y, x, y+l);
@@ -29,14 +29,26 @@ class Slider {
     stroke(255);
   }
   void update() {
-        if (c) {
-    stroke(0);
+    if (c) {
+      stroke(0);
     }
     if (over) {
-      if (v) {
-        tPos=mouseY;
-      } else if (v==false) {
-        tPos=mouseX;
+      if (ui.clicked) {
+        if (v) {
+          tPos=mouseY;
+          if (tPos>y+l) {
+            tPos=y+l;
+          } else if (tPos<y) {
+            tPos=y;
+          }
+        } else if (v==false) {
+          tPos=mouseX;
+          if (tPos>x+l) {
+            tPos=x+l;
+          } else if (tPos<x) {
+            tPos=x;
+          }
+        }
       }
     }
     if (v) {
@@ -47,8 +59,8 @@ class Slider {
       line(x, y, x+l, y);
       line(tPos, y-tSize/2, tPos, y+tSize/2);
     }
-        if (c) {
-    stroke(255);
+    if (c) {
+      stroke(255);
     }
   }
   void hover() {
@@ -69,6 +81,6 @@ class Slider {
     }
   }
   float getValue(int rangeStart, int rangeEnd) {
-    return map(tPos,0,300,rangeStart,rangeEnd);
+    return map(tPos, 0, 300, rangeStart, rangeEnd);
   }
 }

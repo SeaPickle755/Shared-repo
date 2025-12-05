@@ -10,7 +10,7 @@ Grid mainGrid;
 Boolean leftClickDrag = false;
 int cellCounter = 0;
 // this is temporary
-int speed = 5;
+int speed = int(ui.speedDisplay);
 Boolean shouldUIbeVisible = false;
 int penSize = 1;
 int prevMouseX, prevMouseY;
@@ -67,6 +67,9 @@ void mousePressed(){
   } 
   if(mouseButton != RIGHT)
      mainGrid.mousePress(penSize);
+}
+void mouseReleased() {
+  ui.UIonMouseRelease();
 }
 void mouseDragged() 
 {

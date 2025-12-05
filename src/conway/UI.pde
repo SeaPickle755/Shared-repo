@@ -3,10 +3,12 @@ class UI {
   Slider sliderX = new Slider(100, 750, 1025, 50, false, false);
   Slider sliderY = new Slider(50, 50, 625, 50, true, false);
   Slider sliderSpeed = new Slider(1250, 100, 300, 25, false, true);
-  boolean mk;
+  boolean mk, clicked;
+  float speedDisplay;
   UI() {
   }
   void setupUI() {
+    clicked=false;
     mk = true;
     textMode(CENTER);
     //size(1000,800);
@@ -16,6 +18,7 @@ class UI {
   }
 
   void drawUI() {
+    speedDisplay=sliderSpeed.getValue(0, 10)-40;
 
     if (mk == true) {
       stroke(0);
@@ -43,16 +46,19 @@ class UI {
       sliderX.hover();
       sliderY.hover();
       sliderSpeed.hover();
-      sliderSpeed.getValue(0, 10);
       fill(0);
-      text(str(sliderSpeed.getValue(0, 10)), 1250, 50);
+      textSize(20);
+      text("Speed: " + str(speedDisplay), 1250, 150);
       fill(255);
     }
   }
 
   void UIonMouseClick() {
     print("Clicked on UI!");
+    clicked=true;
+    
   }
   void UIonMouseRelease() {
+    clicked=false;
   }
 }
