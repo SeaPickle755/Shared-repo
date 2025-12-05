@@ -79,6 +79,9 @@ void mouseDragged()
 void mouseWheel(MouseEvent event){
   mainGrid.scrolled(event.getCount());
 }
+void updateGrid(){
+  mainGrid.update();
+}
 void draw(){
   background(128);
   mainGrid.display();
@@ -86,7 +89,7 @@ void draw(){
     ui.drawUI();
   cellCounter --;
   if(cellCounter <= speed && speed != 0){
-    mainGrid.update();
+    thread("updateGrid");
     cellCounter = 11;  
     
   }
