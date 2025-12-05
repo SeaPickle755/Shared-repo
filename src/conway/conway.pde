@@ -9,6 +9,7 @@ Cell cellTest;
 Grid mainGrid;
 Boolean leftClickDrag = false;
 int cellCounter = 0;
+int penSize = 0;
 // this is temporary
 int speed = 1;
 Boolean shouldUIbeVisible = false;
@@ -51,6 +52,10 @@ void keyPressed()
     mainGrid.moveCamera(-1, 0);
   else if(key == 'd')
     mainGrid.moveCamera(1, 0);
+  else if(key == '=')
+    penSize++;
+  else if(key == '-')
+    penSize--;
   // DELETE
 }
 
@@ -62,12 +67,12 @@ void mousePressed(){
     }
   } 
   if(mouseButton != RIGHT)
-     mainGrid.mousePress();
+     mainGrid.mousePress(penSize);
 }
 void mouseDragged() 
 {
   if(mouseButton == LEFT)
-    mainGrid.mousePress();
+    mainGrid.mousePress(penSize);
   if(mouseButton == RIGHT)
     mainGrid.moveCamera((int)(mouseX-pmouseX)/2, (int)(mouseY-pmouseY)/2);
 }
