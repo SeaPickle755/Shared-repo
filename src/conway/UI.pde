@@ -50,8 +50,10 @@ class UI {
       text(str(sliderSpeed.getValue(0, 10)), 1250, 150);
       fill(255);
     }
+  } 
+  int getSpeed(){
+    return (int)sliderSpeed.getValue(0, 10);
   }
-
   void UIonMouseClick() {
     clicked=true;
     print("Clicked on UI!");

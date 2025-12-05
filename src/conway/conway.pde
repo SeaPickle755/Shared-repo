@@ -8,7 +8,7 @@ static float UISTARTX = 1250; // the
 Cell cellTest;
 Grid mainGrid;
 Boolean leftClickDrag = false;
-int cellCounter = 0;
+int cellCounter = 11;
 int penSize = 0;
 // this is temporary
 int speed = 1;
@@ -52,7 +52,7 @@ void keyPressed()
     mainGrid.moveCamera(-1, 0);
   else if(key == 'd')
     mainGrid.moveCamera(1, 0);
-  else if(key == '=')
+  else if(key == '=' || key == '+')
     penSize++;
   else if(key == '-')
     penSize--;
@@ -84,12 +84,13 @@ void draw(){
   mainGrid.display();
   if(shouldUIbeVisible)
     ui.drawUI();
-  cellCounter ++;
-  if(cellCounter >= speed && speed != 0){
+  cellCounter --;
+  if(cellCounter <= speed && speed != 0){
     mainGrid.update();
-    cellCounter = 0;  
+    cellCounter = 11;  
     
   }
+  speed = (int)ui.getSpeed();
   //mainGrid.sizeChanged(width, height);
   //cellTest.draw();
   

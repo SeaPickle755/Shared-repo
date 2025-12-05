@@ -81,6 +81,6 @@ class Slider {
     }
   }
   float getValue(int rangeStart, int rangeEnd) {
-    return map(tPos, 0, 300, rangeStart, rangeEnd);
+    return map(tPos, x, x+l, rangeStart, rangeEnd);
   }
 }
