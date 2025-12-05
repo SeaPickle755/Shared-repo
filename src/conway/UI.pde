@@ -3,10 +3,11 @@ class UI {
   Slider sliderX = new Slider(100, 750, 1025, 50, false, false);
   Slider sliderY = new Slider(50, 50, 625, 50, true, false);
   Slider sliderSpeed = new Slider(1250, 100, 300, 25, false, true);
-  boolean mk;
+  boolean mk, clicked;
   UI() {
   }
   void setupUI() {
+    clicked=false;
     mk = true;
     textMode(CENTER);
     //size(1000,800);
@@ -52,8 +53,10 @@ class UI {
   }
 
   void UIonMouseClick() {
+    clicked=true;
     print("Clicked on UI!");
   }
   void UIonMouseRelease() {
+    clicked=false;
   }
 }
