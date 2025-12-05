@@ -45,7 +45,8 @@ class UI {
       sliderSpeed.hover();
       sliderSpeed.getValue(0, 10);
       fill(0);
-      text(str(sliderSpeed.getValue(0, 10)), 1250, 50);
+      textSize(20);
+      text(str(sliderSpeed.getValue(0, 10)), 1250, 150);
       fill(255);
     }
   }

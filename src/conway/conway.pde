@@ -10,7 +10,7 @@ Grid mainGrid;
 Boolean leftClickDrag = false;
 int cellCounter = 0;
 // this is temporary
-int speed = 5;
+int speed = 1;
 Boolean shouldUIbeVisible = false;
 int prevMouseX, prevMouseY;
 void setup(){
