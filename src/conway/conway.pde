@@ -63,6 +63,7 @@ void mousePressed(){
   if(shouldUIbeVisible){
     if(mouseX > UISTARTX){
       ui.UIonMouseClick();
+      return;
     }
   } 
   if(mouseButton != RIGHT)

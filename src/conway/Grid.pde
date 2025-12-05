@@ -15,10 +15,18 @@ class Grid {
     scrollX = 1;
     scrollY = 1;
   }
+  int getPopulation(){
+    return aliveCells.size();
+  }
   void display() {
     int cols = width / (int)CELLSIZE*scrollX;
     int rows = height / (int)CELLSIZE*scrollY;
-    strokeWeight(0);
+    if(scrollX != 1){
+      noStroke();
+    }
+    else{
+      stroke(0);
+    }
     for (int x = 0; x < cols; x++) {
       for (int y = 0; y < rows; y++) {
 
@@ -31,7 +39,10 @@ class Grid {
         }
             float cellW = CELLSIZE / scrollX;
     float cellH = CELLSIZE / scrollY;
-    
+    boolean drawGrid = cellW >= 4 && cellH >= 4;
+    if (drawGrid) stroke(5);
+    else noStroke();
+
     rect(x * cellW, y * cellH, cellW, cellH);
       }
     }
@@ -115,19 +126,19 @@ class Grid {
       isOccupied = false;
     }
     return isOccupied;
-  }
+    }
 void mousePress(int size) {
-  int centerX = (int)(mouseX / (CELLSIZE * scrollX)) + offsetX;
-  int centerY = (int)(mouseY / (CELLSIZE * scrollY)) + offsetY;
 
-  // Loop through cells within the brush size
+  float cellW = CELLSIZE / (float)scrollX;
+  float cellH = CELLSIZE / (float)scrollY;
+
+  int centerX = floor(mouseX / cellW) + offsetX;
+  int centerY = floor(mouseY / cellH) + offsetY;
+
   for (int dx = -size; dx <= size; dx++) {
     for (int dy = -size; dy <= size; dy++) {
 
-      int cellX = centerX + dx;
-      int cellY = centerY + dy;
-
-      PVector cell = new PVector(cellX, cellY);
+      PVector cell = new PVector(centerX + dx, centerY + dy);
 
       if (aliveCells.containsKey(cell)) {
         aliveCells.remove(cell);
@@ -137,4 +148,5 @@ void mousePress(int size) {
     }
   }
 }
+
 };
