@@ -1,4 +1,4 @@
-class Slider {
+  class Slider {
   float x, y, l, tPos, tSize;
   int map;
   boolean v, over, c;
