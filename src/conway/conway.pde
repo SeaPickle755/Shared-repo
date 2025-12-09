@@ -57,6 +57,8 @@ void keyPressed()
     penSize++;
   else if (key == '-')
     penSize--;
+  else if (key == 'c')
+    mainGrid.clearCells();
   // DELETE
 }
 

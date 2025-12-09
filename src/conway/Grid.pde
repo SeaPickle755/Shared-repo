@@ -9,16 +9,20 @@ class Grid {
   // create list of alive cells only
   HashMap<PVector, Boolean> aliveCells;
   int offsetX, offsetY;
+  boolean drawGrid;
   int scrollX, scrollY;
   Grid() {
     aliveCells = new HashMap<PVector, Boolean>();
     scrollX = 1;
+    drawGrid = true;
     scrollY = 1;
   }
   int getPopulation(){
     return aliveCells.size();
   }
   void display() {
+    strokeWeight(1);
+    stroke(128);
     background(0);
     int cols = width / (int)CELLSIZE*scrollX;
     int rows = height / (int)CELLSIZE*scrollY;
@@ -32,12 +36,10 @@ class Grid {
         } else {
           fill(0);           // BLACK – dead
         }
-            float cellW = CELLSIZE / scrollX;
-    float cellH = CELLSIZE / scrollY;
-    boolean drawGrid = cellW <= 4 && cellH <= 4;
-    if (drawGrid) strokeWeight(1);
-    else noStroke();
+            
 
+  float cellW = CELLSIZE / scrollX;
+  float cellH = CELLSIZE / scrollY;
     rect(x * cellW, y * cellH, cellW, cellH);
       }
     }
@@ -45,9 +47,15 @@ class Grid {
 void clearCells(){
   aliveCells.clear();
 }
-  void scrolled(int scroll) {
+void scrolled(int scroll) {
   scrollX = max(1, scrollX + scroll);
   scrollY = max(1, scrollY + scroll);
+  float cellW = CELLSIZE / scrollX;
+  float cellH = CELLSIZE / scrollY;
+  boolean drawGrid = cellW >= 4 && cellH >= 4;
+  stroke(128);
+  if (drawGrid) strokeWeight(1);
+  else noStroke();
 }
   // Andrew Yenchek
   void update() {
