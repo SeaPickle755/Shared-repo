@@ -19,14 +19,9 @@ class Grid {
     return aliveCells.size();
   }
   void display() {
+    background(0);
     int cols = width / (int)CELLSIZE*scrollX;
     int rows = height / (int)CELLSIZE*scrollY;
-    if(scrollX != 1){
-      noStroke();
-    }
-    else{
-      stroke(0);
-    }
     for (int x = 0; x < cols; x++) {
       for (int y = 0; y < rows; y++) {
 
@@ -39,8 +34,8 @@ class Grid {
         }
             float cellW = CELLSIZE / scrollX;
     float cellH = CELLSIZE / scrollY;
-    boolean drawGrid = cellW >= 4 && cellH >= 4;
-    if (drawGrid) stroke(5);
+    boolean drawGrid = cellW <= 4 && cellH <= 4;
+    if (drawGrid) strokeWeight(1);
     else noStroke();
 
     rect(x * cellW, y * cellH, cellW, cellH);

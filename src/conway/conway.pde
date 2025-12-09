@@ -38,13 +38,7 @@ void keyPressed()
   }
   // ALL THIS CODE IS TEMPORARY
   // 80 is p
-  if(keyCode == 80 && speed != 0){
-    speed = 0;
-    return;
-  }
-  if(keyCode == 80 ){
-    speed = 5;
-  }
+  
   if(key == 'w'){
     mainGrid.moveCamera(0, -1);
   }else if(key == 's'){
@@ -57,7 +51,6 @@ void keyPressed()
     penSize++;
   else if(key == '-')
     penSize--;
-  // DELETE
 }
 
 void mousePressed(){
