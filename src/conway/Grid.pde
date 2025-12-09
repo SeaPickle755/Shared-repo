@@ -42,6 +42,9 @@ class Grid {
       }
     }
   }
+void clearCells(){
+  aliveCells.clear();
+}
   void scrolled(int scroll) {
   scrollX = max(1, scrollX + scroll);
   scrollY = max(1, scrollY + scroll);
