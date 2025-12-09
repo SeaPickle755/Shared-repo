@@ -21,9 +21,10 @@ class Grid {
     return aliveCells.size();
   }
   void display() {
-    strokeWeight(1);
     stroke(128);
-    background(0);
+      
+    if (drawGrid) strokeWeight(1);
+    else noStroke();
     int cols = width / (int)CELLSIZE*scrollX;
     int rows = height / (int)CELLSIZE*scrollY;
     for (int x = 0; x < cols; x++) {
@@ -52,10 +53,7 @@ void scrolled(int scroll) {
   scrollY = max(1, scrollY + scroll);
   float cellW = CELLSIZE / scrollX;
   float cellH = CELLSIZE / scrollY;
-  boolean drawGrid = cellW >= 4 && cellH >= 4;
-  stroke(128);
-  if (drawGrid) strokeWeight(1);
-  else noStroke();
+  drawGrid = (cellW >= 4) && (cellH >= 4);
 }
   // Andrew Yenchek
   void update() {
