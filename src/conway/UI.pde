@@ -1,6 +1,7 @@
 //Conway's Game of Life UI || Andrew Rogan || 11/11/25
 class UI {
   Slider sliderSpeed = new Slider(1250, 100, 300, 25, false, true);
+  Slider sliderPenSize = new Slider(1250, 300, 300, 25, false, true);
   boolean mk, clicked;
   UI() {
   }
@@ -34,15 +35,25 @@ class UI {
       sliderSpeed.display();
       sliderSpeed.hover();
       sliderSpeed.getValue(0, 10);
+      sliderPenSize.update();
+      sliderPenSize.display();
+      sliderPenSize.hover();
+      sliderPenSize.getValue(0, 10);
       fill(0);
       textSize(20);
+      text("Change Speed", 1250, 50, 200);
+      text("Change Pen Size", 1250, 250, 200);
       text(str(sliderSpeed.getValue(0, 10)), 1250, 150);
-      text("Population: " + str(mainGrid.getPopulation()),1300,725);
+      text(str(sliderPenSize.getValue(0, 10)), 1250, 350);
+      text("Population: " + str(mainGrid.getPopulation()), 1300, 725);
       fill(255);
     }
-  } 
-  int getSpeed(){
+  }
+  int getSpeed() {
     return (int)sliderSpeed.getValue(0, 10);
+  }
+  int getPenSize() {
+    return (int)sliderPenSize.getValue(0, 10);
   }
   void UIonMouseClick() {
     clicked=true;
