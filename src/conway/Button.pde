@@ -36,7 +36,7 @@ class Button {
    fill(fillColor);
 
 
-    fill(fillColor); //BRAXTEN OR WHATEVER HOWEVER YOU SPELL YOUR NAME FIX YOUR CODE
+    fill(fillColor); 
 
     fill(textColor);
 
